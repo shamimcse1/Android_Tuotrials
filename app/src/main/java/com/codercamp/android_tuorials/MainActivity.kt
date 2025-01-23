@@ -2,6 +2,7 @@ package com.codercamp.android_tuorials
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -10,9 +11,8 @@ import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var textView : TextView
-
-    private  lateinit var button : Button // Button Declaration
+    private  lateinit var imageView: ImageView // Declare ImageView
+    private lateinit var  button: Button // Declare Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,29 +24,16 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        textView = findViewById(R.id.textView)
 
-        // Button Initialization
-        button = findViewById(R.id.button)
+        imageView = findViewById(R.id.imageView) // Initialize ImageView
+        button = findViewById(R.id.button) // Initialize Button
 
-        textView.setOnClickListener{v->
-
-            textView.text = "Hello Programmer"
+        //Button Click Event
+        button.setOnClickListener {
+            // After Button Click Image Will Change
+            imageView.setImageResource(R.drawable.image) // Set Image Resource
         }
-
-        textView.isSelected = true
-
-
-        // Button Click Event
-
-        button.setOnClickListener{
-            // Change Text
-            textView.text = "Hello World"
-            // Change Background Color
-            textView.setBackgroundColor(resources.getColor(R.color.green))
-            // Change Text Color
-            textView.setTextColor(resources.getColor(R.color.white))
-        }
-
     }
 }
+
+//1670.1 939.4
