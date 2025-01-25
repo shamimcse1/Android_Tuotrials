@@ -10,20 +10,19 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_launcher_foreground"/>
+        android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
+        android:layout_margin="20dp"
+        android:id="@+id/loadImage"/>
+
 
     <Button
-        android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Load Image"
         android:layout_margin="20dp"
-        android:text="Change Image">
-
-    </Button>
-
+        android:id="@+id/loadImageBtn"/>
 
 </LinearLayout>

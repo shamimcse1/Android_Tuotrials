@@ -8,11 +8,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
 
-    private  lateinit var imageView: ImageView // Declare ImageView
-    private lateinit var  button: Button // Declare Button
+    private lateinit var  imageView: ImageView // Declare ImageView
+    private lateinit var  loadImageBtn: Button // Declare Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,16 +25,18 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        imageView = findViewById(R.id.loadImage) // Initialize ImageView
+        loadImageBtn = findViewById(R.id.loadImageBtn) // Initialize Button
 
-        imageView = findViewById(R.id.imageView) // Initialize ImageView
-        button = findViewById(R.id.button) // Initialize Button
+        //When Button Clicked Image Will Load
+        loadImageBtn.setOnClickListener {
+            Glide.with(this)
+                .load("https://goo.gl/gEgYUd")
+                .into(imageView)
 
-        //Button Click Event
-        button.setOnClickListener {
-            // After Button Click Image Will Change
-            imageView.setImageResource(R.drawable.image) // Set Image Resource
+
         }
+        //Image load from URL
+
     }
 }
-
-//1670.1 939.4
